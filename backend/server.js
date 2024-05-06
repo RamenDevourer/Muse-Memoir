@@ -15,11 +15,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-
-app.use(cors({
-    origin: 'https://muse-memoir.vercel.app/'
-}));
-
+app.use(cors());
 
 mongoose
     .connect(mongoDBURL)
@@ -47,7 +43,7 @@ const requireLogin = (req, res, next) => {
 };
 
 app.get('/', (req, res) => {
-    res.json("server live");
+    res.json("server live")
 })
 
 app.use('/notes', notesRoute);
