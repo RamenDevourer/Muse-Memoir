@@ -15,7 +15,7 @@ function Blog() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:5555/blog/${id}`);
+                const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/${id}`);
                 setBlog(res.data);
             } catch (error) {
                 console.log(error, "try block error");

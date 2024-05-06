@@ -25,7 +25,7 @@ function UpdateBlog() {
   useEffect(() => {
     const fetchData = async () => {
         try {
-            const res = await axios.get(`http://localhost:5555/blog/${id}`);
+            const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/${id}`);
             setTitle(res.data.title);
             setTag(res.data.tag);
             setContent(res.data.content);
@@ -97,7 +97,7 @@ function UpdateBlog() {
   const handlePost = async () => {
     var Token = localStorage.getItem('accessToken');
     await axios
-    .put(`http://localhost:5555/blog/${id}`, 
+    .put(`https://muse-memoir-backend.vercel.app/blog/${id}`, 
         { "title": title, "content": content, "tag": tag },
         { headers: { 'Authorization': `Bearer ${Token}` } }
     )

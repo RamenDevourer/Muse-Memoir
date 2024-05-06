@@ -9,7 +9,7 @@ function Logout() {
 
     const handleLogin = () => {
         axios
-        .post(`http://localhost:5555/auth/login`, {"username" : username, "password" : password})
+        .post(`https://muse-memoir-backend.vercel.app/auth/login`, {"username" : username, "password" : password})
         .catch((error) => {
             console.log(error.message);
         })

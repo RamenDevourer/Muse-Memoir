@@ -17,7 +17,7 @@ function Dashboard() {
             try {
                 var Token = localStorage.getItem('accessToken');
 
-                const res = await axios.get(`http://localhost:5555/auth/protected`, {
+                const res = await axios.get(`https://muse-memoir-backend.vercel.app/auth/protected`, {
                     headers: {
                         'Authorization': `Bearer ${Token}`
                     }

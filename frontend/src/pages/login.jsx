@@ -14,7 +14,7 @@ function Login() {
 
     const handleLogin = async () => {
         await axios
-        .post(`http://localhost:5555/auth/login`, {"username" : username, "password" : password})
+        .post(`https://muse-memoir-backend.vercel.app/auth/login`, {"username" : username, "password" : password})
         .then((res) => {
             setInvalid('');
             navigate('/dashboard');
@@ -37,7 +37,7 @@ function Login() {
           return;
       }
 
-      axios.get('http://localhost:5555/auth/protected', {
+      axios.get('https://muse-memoir-backend.vercel.app/auth/protected', {
         headers: {
             'Authorization': `Bearer ${accessToken}`
         }})

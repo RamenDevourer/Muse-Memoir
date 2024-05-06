@@ -14,7 +14,7 @@ function Register() {
 
     const handleRegister = async () => {
         await axios
-        .post(`http://localhost:5555/auth/register`, {"username" : username, "password" : password})
+        .post(`https://muse-memoir-backend.vercel.app/auth/register`, {"username" : username, "password" : password})
         .then((res) => {
             setInvalid('');
             // navigate('/create');
@@ -38,7 +38,7 @@ function Register() {
           return;
       }
 
-      axios.get('http://localhost:5555/auth/protected', {
+      axios.get('https://muse-memoir-backend.vercel.app/auth/protected', {
         headers: {
             'Authorization': `Bearer ${accessToken}`
         }})

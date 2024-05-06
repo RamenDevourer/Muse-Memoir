@@ -15,7 +15,7 @@ function DeleteBlog() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:5555/blog/${id}`);
+                const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/${id}`);
                 setBlog(res.data);
             } catch (error) {
                 console.log(error, "try block error");
@@ -40,7 +40,7 @@ function DeleteBlog() {
     const handleDelete = async () => {
         var Token = localStorage.getItem('accessToken');
         await axios
-        .delete(`http://localhost:5555/blog/${id}`, 
+        .delete(`https://muse-memoir-backend.vercel.app/blog/${id}`, 
             { headers: { 'Authorization': `Bearer ${Token}` } }
         )
         .then((res) => {

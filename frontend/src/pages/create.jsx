@@ -24,7 +24,7 @@ function Create() {
           try {
               var Token = localStorage.getItem('accessToken');
 
-              const res = await axios.get(`http://localhost:5555/auth/protected`, {
+              const res = await axios.get(`https://muse-memoir-backend.vercel.app/auth/protected`, {
                   headers: {
                       'Authorization': `Bearer ${Token}`
                   }
@@ -95,7 +95,7 @@ function Create() {
   const handlePost = async () => {
     var Token = localStorage.getItem('accessToken');
     await axios
-    .post(`http://localhost:5555/blog/`, 
+    .post(`https://muse-memoir-backend.vercel.app/blog/`, 
         { "title": title, "username": username, "content": content, "tag": tag },
         { headers: { 'Authorization': `Bearer ${Token}` } }
     )
