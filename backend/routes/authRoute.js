@@ -29,7 +29,7 @@ router.post('/register', async(req, res) => {
     
     try {
         if (!req.body.username || !req.body.password){
-            return res.status(500).send({message: `send all required feilds` })
+            return res.status(500).send({message: `send all required fields` })
         }
         const { username, password } = req.body;
         const existingUser = await users.findOne({ username: username });
