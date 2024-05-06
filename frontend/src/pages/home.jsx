@@ -15,7 +15,7 @@ function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:5555/blog/`);
+                const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/`);
                 setMongoList(res.data.data);
                 res.data.data.forEach((blog) => {
                     setList((l) => [...l, {title: blog.title, _id: blog._id, content: blog.content, tag: blog.tag, date: blog.createdAt}]);
