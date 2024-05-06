@@ -3,13 +3,10 @@ import express from 'express';
 import session from 'express-session';
 import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
-import {Notes} from './models/notes.js';
-import {Auth} from './models/auth.js';
 import notesRoute from './routes/notesRoute.js';
 import authRoute from './routes/authRoute.js';
 import blogRoute from './routes/blogsRoute.js';
 import cors from 'cors';
-import jwt from 'jsonwebtoken';
 
 dotenv.config();
 
@@ -43,7 +40,7 @@ const requireLogin = (req, res, next) => {
 };
 
 app.get('/', (req, res) => {
-    res.json("server live")
+    res.json("server live");
 })
 
 app.use('/notes', notesRoute);
