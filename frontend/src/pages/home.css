@@ -1,0 +1,75 @@
+
+.row {
+    margin-top: 30px;
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.col1{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.col2{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.col3{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card{
+    margin: 25px;
+    margin-bottom: 30px;
+    
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.content{
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.col2 .title{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.col2 .content{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+
+.title:hover {
+    color: hsl(0, 0%, 40%);
+}
+
+.content:hover {
+    color: hsl(0, 0%, 40%);
+}
+
+.tag{
+    border: 1.4px solid;
+    margin: 15px 0;
+    padding: 2px 3px;
+    width: fit-content;
+}
+
+.tag:hover {
+    color: hsl(0, 0%, 40%);
+}

@@ -1,0 +1,104 @@
+
+.container.login-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7rem;
+}
+
+.login-card{
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+input{
+    appearance: none;
+    border: none;
+    margin: 12.5px 0;
+    padding: 0;
+    background: none;
+    outline: none;
+    font: inherit;
+    font-size: 1.25rem;
+    color: inherit;
+    text-align: inherit;
+}
+
+button{
+    appearance: none;
+    border: 2px solid;
+    margin: 10px 0;
+    padding: 10px 0;
+    background: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover{
+    color: hsl(0, 0%, 40%);
+    border: hsl(0, 0%, 40%);
+    border: 2px solid;
+}
+
+.pass{
+    margin-bottom: 20px;
+}
+
+.login-title{
+    font-size: 2rem;
+    margin: 10px 0 20px 0;
+}
+
+hr{
+    width: 90%;
+}
+
+.register{
+    margin-top: 15px;
+}
+
+.login-text{
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.invalid{
+    font-size: 1rem;
+    color: hsl(0, 100%, 65%);
+}
+
+Link{
+    width: 100%;
+}
+
+.dashboard-card{
+    width: 30rem;
+}
+
+.dashboard-button{
+    text-align: center;
+}
+
+.logout{
+    color: hsl(0, 100%, 65%);
+}
+
+.dashboard-title{
+    font-size: 3rem;
+    padding: 10px 0 0 10px;
+}
+
+.logout-button{
+    border: none;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.logout-button:hover{
+    border: none;
+}
