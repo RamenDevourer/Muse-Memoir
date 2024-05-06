@@ -84,7 +84,7 @@ Link{
     text-align: center;
 }
 
-.logout{
+.logout, .delete-button, .delete-heading{
     color: hsl(0, 100%, 65%);
 }
 
@@ -101,4 +101,16 @@ Link{
 
 .logout-button:hover{
     border: none;
+}
+
+.dashboard-button:hover a{
+    color: hsl(0, 0%, 40%);
+}
+
+.logout-button:hover span, .delete-button:hover{
+    color: hsl(0, 100%, 75%);
+}
+
+.delete-bottom{
+    margin-bottom: 8rem;
 }

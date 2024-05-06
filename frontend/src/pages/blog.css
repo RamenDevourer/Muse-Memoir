@@ -82,3 +82,18 @@ textarea {
 .blog-content-text{
     margin-bottom: 6rem;
 }
+
+.heading{
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    width: 100%;
+}
+
+.delete:hover .delete-inside{
+    text-decoration: line-through;
+    text-decoration-thickness: 4px;
+    text-decoration-color: hsl(0, 100%, 75%);
+    color: hsl(0, 100%, 75%) !important;
+}

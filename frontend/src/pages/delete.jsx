@@ -3,11 +3,11 @@ import axios from 'axios'
 import {Routes, Route, redirect} from 'react-router-dom'
 import { useNavigate,Link,useParams } from 'react-router-dom';
 import Navbar from './navbar.jsx'
-import UpdateCard from './update_card.jsx'
+import DeleteCard from './delete_card.jsx'
 import './home.css'
 
 
-function Update() {
+function Delete() {
     const [list, setList] = useState([]);
     const [loading, setLoading] = useState("Loading...");
     const [mongoList, setMongoList] = useState([]);
@@ -52,23 +52,23 @@ function Update() {
       <>
         <Navbar />
         <div className='container'>
-          <span className='heading'>UPDATE</span>
+          <span className='heading delete-heading'>DELETE</span>
          <div className='row'>
           {list.length > 0 ? (
         <>
             <div className='col1'>
             {list.slice(4, 11).map((item, index) => (
-                <UpdateCard key={index} blog={item} title={{ words: 20, letters: 100 }} content={{ words: 30, letters: 200 }} />
+                <DeleteCard key={index} blog={item} title={{ words: 20, letters: 100 }} content={{ words: 30, letters: 200 }} />
               ))}
             </div>
             <div className='col2'>
               {list.slice(0, 4).map((item, index) => (
-                <UpdateCard key={index} blog={item} title={{ words: 20, letters: 100 }} content={{ words: 80, letters: 500 }} />
+                <DeleteCard key={index} blog={item} title={{ words: 20, letters: 100 }} content={{ words: 80, letters: 500 }} />
               ))}
             </div>
             <div className='col3'>
             {list.slice(11, 18).map((item, index) => (
-                <UpdateCard key={index} blog={item} title={{ words: 20, letters: 100 }} content={{ words: 30, letters: 200 }} />
+                <DeleteCard key={index} blog={item} title={{ words: 20, letters: 100 }} content={{ words: 30, letters: 200 }} />
               ))}
             </div>
             </>
@@ -81,4 +81,4 @@ function Update() {
     );
 }
 
-export default Update;
+export default Delete;
