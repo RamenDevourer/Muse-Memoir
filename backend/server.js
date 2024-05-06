@@ -46,6 +46,10 @@ const requireLogin = (req, res, next) => {
     next();
 };
 
+app.get('/', (req, res) => {
+    res.json("server live");
+})
+
 app.use('/notes', notesRoute);
 
 app.use('/auth', authRoute);
