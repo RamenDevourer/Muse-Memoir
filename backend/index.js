@@ -12,7 +12,12 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+    origin: 'https://muse-memoir.vercel.app/',
+};
+
+app.use(cors(corsOptions));
 
 mongoose
     .connect(mongoDBURL)
