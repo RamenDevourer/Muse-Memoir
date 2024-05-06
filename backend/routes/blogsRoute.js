@@ -9,7 +9,7 @@ const router = express.Router();
 router.post ('/',authenticateToken , async (req, res) => {
     try {
         if (!req.body.title || !req.body.username || !req.body.content || !req.body.tag){
-            return res.status(500).send({message: `send all required feilds` })
+            return res.status(500).send({message: `send all required fields` })
         }
         const newBlog = {title: req.body.title , username: req.body.username, content: req.body.content, tag: req.body.tag};
         const Blog = await Blogs.create(newBlog);

@@ -8,7 +8,7 @@ const router = express.Router();
 router.post ('/', async (req, res) => {
     try {
         if (!req.body.note || !req.body.username || !req.body.index){
-            return res.status(500).send({message: `send all required feilds` })
+            return res.status(500).send({message: `send all required fields` })
         }
         const newNote = {note: req.body.note , username: req.body.username, index: req.body.index};
         const Note = await Notes.create(newNote);
