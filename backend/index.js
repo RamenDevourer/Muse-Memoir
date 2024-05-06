@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-    origin: 'https://muse-memoir.vercel.app/',
+    origin: 'https://muse-memoir.vercel.app',
 };
 
 app.use(cors(corsOptions));
