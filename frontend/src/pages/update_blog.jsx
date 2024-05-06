@@ -152,7 +152,7 @@ function UpdateBlog() {
                         rows={contentRows}
                         placeholder='Start writing blog...'/>
                 </div>
-                <div className='post-container'><button onClick={handlePost} className='post'>Update</button></div>
+                <div className='post-container'><button onClick={handlePost} className='post'>Edit</button></div>
                 
             </div>
           </>

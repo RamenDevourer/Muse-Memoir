@@ -57,8 +57,8 @@ function Dashboard() {
         <div className='login-card dashboard-card'>
           <span className='login-title dashboard-title'>{username},</span>
           <hr/>
-          <span className='login-title dashboard-button'><Link to='/create' >Create</Link></span>
-          <span className='login-title dashboard-button'><Link to={`/update/${username}`} >Update</Link></span>
+          <span className='login-title dashboard-button'><Link to='/create' >Post</Link></span>
+          <span className='login-title dashboard-button'><Link to={`/update/${username}`} >Edit</Link></span>
           <span className='login-title dashboard-button'><Link to={`/delete/${username}`} >Delete</Link></span>
           <button onClick={handleLogout} className='logout-button'><span className='login-title dashboard-button logout'>Logout</span></button>
           </div>

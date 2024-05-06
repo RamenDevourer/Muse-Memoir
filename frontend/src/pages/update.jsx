@@ -52,7 +52,7 @@ function Update() {
       <>
         <Navbar />
         <div className='container'>
-          <span className='heading'>UPDATE</span>
+          <span className='heading'>EDIT</span>
          <div className='row'>
           {list.length > 0 ? (
         <>
