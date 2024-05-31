@@ -14,10 +14,9 @@ const app = express();
 app.use(express.json());
 
 // Uncomment and change frontend url for deployment
-console.log(process.env.FRONTEND_URL);
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL,
+    origin: 'https://muse-memoir.vercel.app',
 };
 
 app.use(cors(corsOptions));
