@@ -13,11 +13,18 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+// Uncomment and change frontend url for deployment
+console.log(process.env.FRONTEND_URL);
+
 const corsOptions = {
-    origin: 'https://muse-memoir.vercel.app',
+    origin: process.env.FRONTEND_URL,
 };
 
 app.use(cors(corsOptions));
+
+// Uncomment for localhost
+// app.use(cors());
+
 mongoose
     .connect(mongoDBURL)
     .then(() => {

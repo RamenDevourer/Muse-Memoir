@@ -4,6 +4,7 @@ import {Routes, Route, redirect} from 'react-router-dom'
 import { useNavigate,Link } from 'react-router-dom';
 import Navbar from './navbar.jsx'
 import './login.css'
+import serverUrl from './server_url.jsx'
 
 
 function Register() {
@@ -14,7 +15,7 @@ function Register() {
 
     const handleRegister = async () => {
         await axios
-        .post(`https://muse-memoir-backend.vercel.app/auth/register`, {"username" : username, "password" : password})
+        .post(`${serverUrl}/auth/register`, {"username" : username, "password" : password})
         .then((res) => {
             setInvalid('');
             // navigate('/create');
@@ -38,7 +39,7 @@ function Register() {
           return;
       }
 
-      axios.get('https://muse-memoir-backend.vercel.app/auth/protected', {
+      axios.get('${serverUrl}/auth/protected', {
         headers: {
             'Authorization': `Bearer ${accessToken}`
         }})

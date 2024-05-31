@@ -5,6 +5,7 @@ import { useNavigate,Link,useParams } from 'react-router-dom';
 import Navbar from './navbar.jsx'
 import DeleteCard from './delete_card.jsx'
 import './home.css'
+import serverUrl from './server_url.jsx'
 
 
 function Delete() {
@@ -17,7 +18,7 @@ function Delete() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/update/${username}`);
+                const res = await axios.get(`${serverUrl}/blog/update/${username}`);
                 setMongoList(res.data.data);
                 res.data.data.forEach((blog) => {
                     setList((l) => [...l, {title: blog.title, _id: blog._id, content: blog.content, tag: blog.tag, date: blog.createdAt}]);

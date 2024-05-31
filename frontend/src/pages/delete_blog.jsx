@@ -4,6 +4,7 @@ import {Routes, Route, redirect} from 'react-router-dom'
 import { useNavigate,useParams } from 'react-router-dom';
 import Navbar from './navbar.jsx'
 import './blog.css'
+import serverUrl from './server_url.jsx'
 
 
 function DeleteBlog() {
@@ -15,7 +16,7 @@ function DeleteBlog() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/${id}`);
+                const res = await axios.get(`${serverUrl}/blog/${id}`);
                 setBlog(res.data);
             } catch (error) {
                 console.log(error, "try block error");
@@ -40,7 +41,7 @@ function DeleteBlog() {
     const handleDelete = async () => {
         var Token = localStorage.getItem('accessToken');
         await axios
-        .delete(`https://muse-memoir-backend.vercel.app/blog/${id}`, 
+        .delete(`${serverUrl}/blog/${id}`, 
             { headers: { 'Authorization': `Bearer ${Token}` } }
         )
         .then((res) => {

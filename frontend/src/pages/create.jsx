@@ -4,7 +4,7 @@ import {Routes, Route, redirect} from 'react-router-dom'
 import { useNavigate,useParams,Link } from 'react-router-dom';
 import Navbar from './navbar.jsx'
 import './blog.css'
-
+import serverUrl from './server_url.jsx'
 
 function Create() {
     
@@ -24,7 +24,7 @@ function Create() {
           try {
               var Token = localStorage.getItem('accessToken');
 
-              const res = await axios.get(`https://muse-memoir-backend.vercel.app/auth/protected`, {
+              const res = await axios.get(`${serverUrl}/auth/protected`, {
                   headers: {
                       'Authorization': `Bearer ${Token}`
                   }
@@ -95,7 +95,7 @@ function Create() {
   const handlePost = async () => {
     var Token = localStorage.getItem('accessToken');
     await axios
-    .post(`https://muse-memoir-backend.vercel.app/blog/`, 
+    .post(`${serverUrl}/blog/`, 
         { "title": title, "username": username, "content": content, "tag": tag },
         { headers: { 'Authorization': `Bearer ${Token}` } }
     )

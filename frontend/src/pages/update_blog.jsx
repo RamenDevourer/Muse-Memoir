@@ -4,6 +4,7 @@ import {Routes, Route, redirect} from 'react-router-dom'
 import { useNavigate,useParams,Link } from 'react-router-dom';
 import Navbar from './navbar.jsx'
 import './blog.css'
+import serverUrl from './server_url.jsx'
 
 
 function UpdateBlog() {
@@ -25,7 +26,7 @@ function UpdateBlog() {
   useEffect(() => {
     const fetchData = async () => {
         try {
-            const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/${id}`);
+            const res = await axios.get(`${serverUrl}/blog/${id}`);
             setTitle(res.data.title);
             setTag(res.data.tag);
             setContent(res.data.content);
@@ -97,7 +98,7 @@ function UpdateBlog() {
   const handlePost = async () => {
     var Token = localStorage.getItem('accessToken');
     await axios
-    .put(`https://muse-memoir-backend.vercel.app/blog/${id}`, 
+    .put(`${serverUrl}/blog/${id}`, 
         { "title": title, "content": content, "tag": tag },
         { headers: { 'Authorization': `Bearer ${Token}` } }
     )

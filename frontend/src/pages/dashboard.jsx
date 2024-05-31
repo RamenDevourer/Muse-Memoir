@@ -4,6 +4,7 @@ import {Routes, Route, redirect} from 'react-router-dom'
 import { useNavigate,useParams,Link } from 'react-router-dom';
 import Navbar from './navbar.jsx'
 import './login.css'
+import serverUrl from './server_url.jsx'
 
 function Dashboard() {
     const [loading, setLoading] = useState("loading");
@@ -17,7 +18,7 @@ function Dashboard() {
             try {
                 var Token = localStorage.getItem('accessToken');
 
-                const res = await axios.get(`https://muse-memoir-backend.vercel.app/auth/protected`, {
+                const res = await axios.get(`${serverUrl}/auth/protected`, {
                     headers: {
                         'Authorization': `Bearer ${Token}`
                     }

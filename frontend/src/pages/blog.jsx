@@ -4,7 +4,7 @@ import {Routes, Route, redirect} from 'react-router-dom'
 import { useNavigate,useParams } from 'react-router-dom';
 import Navbar from './navbar.jsx'
 import './blog.css'
-
+import serverUrl from './server_url.jsx'
 
 function Blog() {
     const [blog, setBlog] = useState("loading");
@@ -15,7 +15,7 @@ function Blog() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/${id}`);
+                const res = await axios.get(`${serverUrl}/blog/${id}`);
                 setBlog(res.data);
             } catch (error) {
                 console.log(error, "try block error");

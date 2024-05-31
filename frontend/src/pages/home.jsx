@@ -5,6 +5,7 @@ import { useNavigate,Link } from 'react-router-dom';
 import Navbar from './navbar.jsx'
 import Card from './card.jsx'
 import './home.css'
+import serverUrl from './server_url.jsx'
 
 
 function Home() {
@@ -15,7 +16,7 @@ function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://muse-memoir-backend.vercel.app/blog/`);
+                const res = await axios.get(`${serverUrl}/blog/`);
                 setMongoList(res.data.data);
                 res.data.data.forEach((blog) => {
                     setList((l) => [...l, {title: blog.title, _id: blog._id, content: blog.content, tag: blog.tag, date: blog.createdAt}]);
