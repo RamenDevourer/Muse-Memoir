@@ -1,0 +1,77 @@
+.analytics-title{
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 2rem;
+}
+
+.analytics-hr{
+    border: none;
+    height: 2px;
+    background-color: black;
+}
+
+.analytic-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.analytic-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.analytics-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    margin: 30px;
+    padding: 30px 15px;
+    width: 13rem;
+}
+
+.analytic-row-recent{
+    height: min-content;
+}
+
+.analytics-recent{
+    width: 20rem;
+    padding: 30px 5px;
+}
+
+.analytics-recent-name{
+    padding: 30px 0 !important;
+}
+
+.analytics-card-name{
+    padding: 0;
+    padding-bottom: 10px;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.analytics-card-number{
+    font-size: 3.5rem;
+    padding: 40px 0;
+    font-weight: 400;
+}
+
+.analytic-graph{
+    width: 51rem;
+    height: 15rem;
+}
+
+.analytic-btn-box{
+    border: 2px solid black;
+    margin: 10px;
+    margin-bottom: 0;
+    padding: 10px 0;
+    width: 90%;
+    text-align: center;
+    font-weight: 500;
+}

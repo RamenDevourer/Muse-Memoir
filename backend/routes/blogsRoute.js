@@ -41,6 +41,9 @@ router.delete ('/:id',authenticateToken , async (req, res) => {
 
 router.get('/' ,async (req, res) => {
     try {
+        console.log("hi");
+        const b = await Blogs.find();
+        console.log(b);
         const blogs = await Blogs.find().sort({ "createdAt": -1 }).limit(18);
 
         return res.status(200).json({
@@ -70,9 +73,19 @@ router.get('/update/:username', async (req, res) => {
 
 router.get('/:id',async (req, res) => {
     try {
-        const { id } = req.params;
-        const blog = await Blogs.findOne( {"_id" : id});
+        const id = req.params.id;
+        // const blog = await Blogs.findByIdAndUpdate( {"_id" : id});
 
+        const blog = await Blogs.findByIdAndUpdate(
+            id,
+            {
+              $inc: { views: 1 },
+              $push: { viewHistory: { timestamp: Date.now() } }
+            },
+            { new: true }
+          );
+        
+        console.log(blog.views);
         return res.status(200).json(blog);
     }catch(error) {
         console.log(error.message);
@@ -86,6 +99,46 @@ router.get('/username',async (req, res) => {
         const user = await users.findOne( {"_id" : id});
 
         return res.status(200).json(user);
+    }catch(error) {
+        console.log(error.message);
+        return res.status(500).send({message : error.message});
+    }
+});
+
+router.get('/analytics/:username', async (req, res) => {
+    try {
+        const { username } = req.params;
+        const blogs = await (Blogs.find({ "username": username }).sort({ "createdAt": -1 }));
+        const recent = blogs.slice(0, 5);
+        const blogsCount = blogs.length;
+        const totalViews = blogs.reduce((sum, blog) => sum + blog.views, 0);
+        const totalComments = blogs.reduce((sum, blog) => sum + blog.comments.length, 0);
+        const allViewHistory = blogs.reduce((history, blog) => {
+            return history.concat(blog.viewHistory);
+        }, []);
+        
+        const modifiedRecentBlogs = recent.map(blog => {
+            let title = blog.title;
+            if (title.length > 19) {
+              title = title.slice(0, 16) + '...';
+            }
+          
+            return {
+              id: blog._id,
+              title: title
+            };
+        });
+          
+        console.log(modifiedRecentBlogs);
+
+        return res.status(200).json({
+            length: blogs.length,
+            posts: blogsCount,
+            views: totalViews,
+            comments: totalComments,
+            viewHistory: allViewHistory,
+            recent: modifiedRecentBlogs,
+        });
     }catch(error) {
         console.log(error.message);
         return res.status(500).send({message : error.message});
@@ -165,6 +218,31 @@ router.put('/moveup/:username/:index', async (req, res) => {
     } catch (error){
         console.log(error.message);
         res.status(500).send({message: error.message});
+    }
+});
+
+router.post('/:id/comments', async (req, res) => {
+    try {
+      const postId = req.params.id;
+      const { title, content } = req.body;
+  
+      const blogPost = await Blogs.findByIdAndUpdate(
+        postId,
+        {
+          $push: {
+            comments: { title, content }
+          }
+        },
+        { new: true }
+      );
+  
+      if (!blogPost) {
+        return res.status(404).json({ message: 'Blog post not found' });
+      }
+  
+      res.json(blogPost);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
     }
 });
 

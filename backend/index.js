@@ -24,6 +24,7 @@ app.use(cors(corsOptions));
 // Uncomment for localhost
 // app.use(cors());
 
+
 mongoose
     .connect(mongoDBURL)
     .then(() => {

@@ -5,6 +5,10 @@
     font-weight: 600;
 }
 
+.blog-container{
+    width: 100%;
+}
+
 .tag-container{
     display: flex;
     justify-content: center;
@@ -96,4 +100,42 @@ textarea {
     text-decoration-thickness: 4px;
     text-decoration-color: hsl(0, 100%, 75%);
     color: hsl(0, 100%, 75%) !important;
+}
+
+.comment-title{
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.comment-writebox{
+    border: 2px solid black;
+    padding: 15px;
+    margin: 15px;
+}
+
+.comment-heading{
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.comment-input{
+    margin: 10px 20px;
+    padding-right: 45px;
+}
+
+.comment-subheading{
+    font-size: 1.75rem;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+.comment-recent-title{
+    font-size: 1.5rem;
+}
+
+.recent-comments{
+    width: 100%;
 }

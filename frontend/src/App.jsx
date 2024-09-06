@@ -6,6 +6,7 @@ import Create from './pages/create.jsx'
 import Home from './pages/home.jsx'
 import Blog from './pages/blog.jsx'
 import Dashboard from './pages/dashboard.jsx'
+import Analytics from './pages/analytics.jsx'
 import Register from './pages/register.jsx'
 import Update from './pages/update.jsx'
 import UpdateBlog from './pages/update_blog.jsx'
@@ -26,6 +27,7 @@ function App() {
       <Route path='/logout' element={<Logout />} />
 
       <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/analytics' element={<Analytics />} />
       <Route path='/create' element={<Create />} />
       <Route path='/updateblog/:id' element={<UpdateBlog />} />
       <Route path='/update/:username' element={<Update />} />
