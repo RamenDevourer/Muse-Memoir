@@ -58,17 +58,18 @@ function Analytics() {
         const views = analytics.data.viewHistory;
 
         const viewsPerDay = views.reduce((acc, view) => {
-            const date = new Date(view.timestamp).toLocaleDateString();
-            if (!acc[date]) {
-            acc[date] = 1;
-            } else {
-            acc[date] += 1;
-            }
-            return acc;
-        }, {});
+          const date = new Date(view.timestamp).toLocaleDateString();
+          if (!acc[date]) {
+              acc[date] = 1;
+          } else {
+              acc[date] += 1;
+          }
+          return acc;
+      }, {});
 
-        const timestamps  = Object.keys(viewsPerDay).sort((a, b) => new Date(a) - new Date(b));
-        const viewCounts  = Object.values(viewsPerDay).sort((a, b) => new Date(a) - new Date(b));
+      const timestamps = Object.keys(viewsPerDay).sort((a, b) => new Date(a) - new Date(b));
+      
+      const viewCounts = timestamps.map(date => viewsPerDay[date]);
 
         setTotalPosts(analytics.data.posts);
         setTotalViews(analytics.data.views);
