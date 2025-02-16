@@ -15,14 +15,14 @@ app.use(express.json());
 
 // Uncomment and change frontend url for deployment
 
-const corsOptions = {
-    origin: 'https://muse-memoir.vercel.app',
-};
+// const corsOptions = {
+//     origin: 'https://muse-memoir.vercel.app',
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // Uncomment for localhost
-// app.use(cors());
+app.use(cors());
 
 
 mongoose

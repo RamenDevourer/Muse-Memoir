@@ -83,7 +83,7 @@ router.get('/:id',async (req, res) => {
               $push: { viewHistory: { timestamp: Date.now() } }
             },
             { new: true }
-          );
+        );
         
         console.log(blog.views);
         return res.status(200).json(blog);

@@ -44,27 +44,27 @@ function Analytics() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        var Token = localStorage.getItem('accessToken');
+      var Token = localStorage.getItem('accessToken');
 
-        const res = await axios.get(`${serverUrl}/auth/protected`, {
-          headers: {
-            'Authorization': `Bearer ${Token}`
-          }
-        });
-        setUsername(res.data.username);
-        setLoading('');
+      const res = await axios.get(`${serverUrl}/auth/protected`, {
+        headers: {
+          'Authorization': `Bearer ${Token}`
+        }
+      });
+      setUsername(res.data.username);
+      setLoading('');
 
-        const analytics = await axios.get(`${serverUrl}/blog/analytics/${res.data.username}`);
-        const views = analytics.data.viewHistory;
+      const analytics = await axios.get(`${serverUrl}/blog/analytics/${res.data.username}`);
+      const views = analytics.data.viewHistory;
 
-        const viewsPerDay = views.reduce((acc, view) => {
-          const date = new Date(view.timestamp).toLocaleDateString();
-          if (!acc[date]) {
-              acc[date] = 1;
-          } else {
-              acc[date] += 1;
-          }
-          return acc;
+      const viewsPerDay = views.reduce((acc, view) => {
+        const date = new Date(view.timestamp).toLocaleDateString();
+        if (!acc[date]) {
+            acc[date] = 1;
+        } else {
+            acc[date] += 1;
+        }
+        return acc;
       }, {});
 
       const timestamps = Object.keys(viewsPerDay).sort((a, b) => new Date(a) - new Date(b));
@@ -76,34 +76,34 @@ function Analytics() {
         setTotalComments(analytics.data.comments);
         setRecentBlogs(analytics.data.recent);
         setViewHistory({
-      data: {
-        labels: timestamps,
-        datasets: [
-          {
-            label: 'Views Per Day',
-            data: viewCounts,
-            fill: true,
-            borderColor: 'rgba(80,80,80,1)',
-            borderWidth: 2,
-            tension: 0.1,
-          }
-        ],
-      },
-      options: {
-        scales: {
-          x: {
-            grid: {
-              display: false, // Hide gridlines on the x-axis
+          data: {
+            labels: timestamps,
+            datasets: [
+              {
+                label: 'Views Per Day',
+                data: viewCounts,
+                fill: true,
+                borderColor: 'rgba(80,80,80,1)',
+                borderWidth: 2,
+                tension: 0,
+              }
+            ],
+          },
+          options: {
+            scales: {
+              x: {
+                grid: {
+                  display: false, // Hide gridlines on the x-axis
+                },
+              },
+              y: {
+                grid: {
+                  display: false, // Hide gridlines on the y-axis
+                },
+              },
             },
           },
-          y: {
-            grid: {
-              display: false, // Hide gridlines on the y-axis
-            },
-          },
-        },
-      },
-    });
+        });
           
       } catch (error) {
         if (error.response.data.message === 'Invalid token') {
