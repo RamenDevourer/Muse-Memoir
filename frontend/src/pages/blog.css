@@ -139,3 +139,195 @@ textarea {
 .recent-comments{
     width: 100%;
 }
+
+.comment-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/* 1600px and below */
+@media (max-width: 1600px) {
+    .blog-title {
+        font-size: 3.5rem;
+    }
+
+    .blog-tag {
+        font-size: 1.1rem;
+    }
+
+    .blog-content {
+        font-size: 1.8rem;
+    }
+
+    .blog-container {
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+    }
+
+    .comment-title {
+        font-size: 2rem;
+    }
+
+    .comment-heading {
+        font-size: 1.8rem;
+    }
+
+    .comment-subheading {
+        font-size: 1.6rem;
+    }
+
+    .comment-recent-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* 1366px and below */
+@media (max-width: 1366px) {
+    .blog-title {
+        font-size: 3rem;
+    }
+
+    .blog-tag {
+        font-size: 1rem;
+    }
+
+    .blog-content {
+        font-size: 1.6rem;
+    }
+
+    .comment-title {
+        font-size: 1.8rem;
+    }
+
+    .comment-heading {
+        font-size: 1.6rem;
+    }
+
+    .comment-subheading {
+        font-size: 1.5rem;
+    }
+
+    .comment-recent-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* 1024px and below */
+@media (max-width: 1024px) {
+    .blog-title {
+        font-size: 2.5rem;
+    }
+
+    .blog-tag {
+        font-size: 0.95rem;
+    }
+
+    .blog-content {
+        font-size: 1.4rem;
+    }
+
+    .comment-title {
+        font-size: 1.6rem;
+    }
+
+    .comment-heading {
+        font-size: 1.4rem;
+    }
+
+    .comment-subheading {
+        font-size: 1.3rem;
+    }
+
+    .comment-recent-title {
+        font-size: 1.2rem;
+    }
+
+    .comment-row {
+        flex-direction: column;
+    }
+
+    .recent-comments {
+        width: auto;
+    }
+}
+
+/* 768px and below */
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2rem;
+    }
+
+    .blog-tag {
+        font-size: 0.9rem;
+    }
+
+    .blog-content {
+        font-size: 1.2rem;
+    }
+
+    .comment-title {
+        font-size: 1.4rem;
+    }
+
+    .comment-heading {
+        font-size: 1.3rem;
+    }
+
+    .comment-subheading {
+        font-size: 1.2rem;
+    }
+
+    .comment-recent-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* 600px and below */
+@media (max-width: 600px) {
+    .blog-title {
+        font-size: 1.8rem;
+    }
+
+    .blog-tag {
+        font-size: 0.85rem;
+    }
+
+    .blog-content {
+        font-size: 1.1rem;
+    }
+
+    .comment-title {
+        font-size: 1.3rem;
+    }
+
+    .comment-heading {
+        font-size: 1.2rem;
+    }
+
+    .comment-subheading {
+        font-size: 1.1rem;
+    }
+
+    .comment-recent-title {
+        font-size: 1rem;
+    }
+}
+
+/* 480px and below */
+@media (max-width: 480px) {
+
+    .blog-content {
+        margin: 0;
+    }
+
+    .blog-title {
+        font-size: 1.6rem;
+    }
+
+    .blog-tag {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

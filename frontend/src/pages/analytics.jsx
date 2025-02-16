@@ -133,7 +133,7 @@ function Analytics() {
             <hr className='analytics-hr' />
             <div className='analytic-row'>
               <div className='analytic-col'>
-                <div className='analytic-row'>
+                <div className='analytic-row numbers-row'>
                   <div className='analytics-card'>
                     <p className='login-title dashboard-title analytics-card-name'>Total Posts</p>
                     <hr />

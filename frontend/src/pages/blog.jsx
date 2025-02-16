@@ -100,7 +100,7 @@ function Blog() {
                     Comments
                 </div>
 
-                <div className='analytic-row'>
+                <div className='comment-row'>
                     <div className='analytic-col comment-writebox comment-write'>
                         <div className='comment-heading'>
                             Write a comment<hr/>

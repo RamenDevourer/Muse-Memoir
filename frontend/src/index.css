@@ -55,3 +55,55 @@ a {
 }
 
 
+/* Responsive Navbar */
+@media (max-width: 1024px) {
+  .navbar {
+    font-size: 2.5rem;
+  }
+
+  .navbar-title {
+    font-size: 2rem;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .material-symbols-outlined {
+    font-size: 1.8rem;
+    padding: 15px 20px;
+  }
+
+  .container{
+    margin: 0 5vw;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    font-size: 2rem;
+  }
+
+  .navbar-title {
+    font-size: 2rem;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+  }
+
+  .material-symbols-outlined {
+    font-size: 1.8rem;
+    padding: 5px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container{
+    margin: 0 3vw;
+  }
+}
